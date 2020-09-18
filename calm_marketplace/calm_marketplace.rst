@@ -1,107 +1,76 @@
 .. _calm_marketplace:
 
 -----------------
-Calm: Marketplace
+Calm: マーケットプレイス
 -----------------
 
-Overview
+概要
 ++++++++
 
-In this exercise you will learn how to manage Calm Blueprints within the Nutanix Marketplace. As part of the exercise you will publish a pre-configured Blueprint to the local Marketplace, clone the Blueprint from the Marketplace for editing, and launch the application.
+Calmマーケットプレイス
++++++++++++++++++++++++
 
-Publishing Blueprints from Marketplace Manager
+この演習では、Nutanixマーケットプレイス内でCalmブループリントを管理する方法を学びます。演習の一環として、事前に設定されたブループリントをローカルのマーケットプレイスに公開し、アプリケーションを起動します。
+
+マーケットプレイスマネージャーからのブループリントの公開
 ..............................................
 
-By default, Calm comes pre-seeded with validated Blueprints for multiple open source and enterprise applications. Marketplace Manager acts as a staging area for publishing default and user-created Blueprints to your local Marketplace. The Marketplace acts as an application store, providing end users with a catalog of available applications.
+デフォルトでは、Calmには、複数のオープンソースおよびエンタープライズアプリケーション用に検証済みのブループリントが事前に準備されています。Marketplace Managerは、デフォルトのブループリントやユーザーが作成したブループリントをローカルの Marketplaceに公開するためのステージングエリアとして機能します。マーケットプレイスはアプリケーションストアとして機能し、利用可能なアプリケーションのカタログをエンドユーザーに提供します。
 
-#. From **Prism Central > Calm**, select |mktmgr-icon| **Marketplace Manager** from the sidebar.
+#. **Prism Central > サービス > Calm** 配下から **Marketplace Manager** のメニューをサイドバーから選択します。
 
-#. Under **Marketplace Blueprints**, select **Mongo**.
+#. **マーケットプレイスブループリント** から、 **LAMP** を選択します。複数ある場合には、最も新しいバージョンのものを選択します。
 
-.. note:: The Blueprint description contains key information including licensing, hardware requirements, OS, supported platforms, and limitations.
+   .. note:: デフォルトでは、Calm には、複数のソースおよびエンタープライズ アプリケーション用の検証済みブループリントが事前に準備されています。
 
-#. Select the **Calm** project from the right-hand side drop down and Click **Publish**.
+#. 右側のドロップダウンの **共有するプロジェクト** から **あなたのイニシャル-Project** プロジェクトを選択し、 **適用** をクリックし、 **公開** をクリックします。(公開のステップは既に他ユーザによって行われている場合があります、その場合は適用のみを行って下さい。)
 
-.. figure:: images/5.10/marketplace_p1_1.png
+   .. figure:: images/calm3/marketplace_p1_1.png
 
-#. Wait for the Blueprint **Status** to appear as **Published**.
+#. ブループリントの **ステータス** が **公開された** と表示されるのを待ちます。
 
-.. figure:: images/5.10/marketplace_p1_2.png
+   .. figure:: images/calm3/marketplace_p1_2.png
 
-#. Under **Projects Shared With**, select the **Calm** Project and click **Apply**.
+マーケットプレイスからのアプリケーションの起動
+..............................................
 
-.. figure:: images/5.10/marketplace_p1_3.png
+#. **Prism Central > サービス > Calm** 配下から **Marketplace** のメニューをサイドバーから選択します。
 
-.. note::
+#. **LAMP** のアイテムを選択し、 **起動** をクリックします。
 
-  If the **Projects Shared With** drop down menu is unavailable, refresh your browser.
+   .. figure:: images/calm3/launch.png
 
-Cloning Blueprints from Marketplace
-...................................
+#. **あなたのイニシャル-Project** のプロジェクトを選択し、 **起動** をクリックします。
 
-#. From **Prism Central > Calm**, select |mkt-icon| **Marketplace** from the sidebar. All Blueprints published in Marketplace Manager are visible here.
+   .. figure:: images/calm3/launchproject.png
 
-.. figure:: images/5.10/marketplace_p1_4.png
+#. 以下入力し、 **作成** をクリックします。
 
-#. Select the **Mongo** Blueprint and click **Clone**.
+   - **アプリケーションの名前** - *あなたのイニシャル*-LAMP
+   - **アプリケーションプロファイル** - Nutanix
+   - **MYSQL_PASSWORD** - Nutanix/4u
 
-.. note::
+   .. figure:: images/calm3/launchmkt.png
 
-  Selecting **Actions Included** for a Blueprint will display the actions that have been implemented for a given Blueprint, such as Create, Start, Stop, Delete, Update, Scale Up, Scale Down, etc.
+#. ブループリントが **実行中** のステータスになるのを待ちます。マーケットプレイスから数クリックでLAMPのアプリケーションスタックをデプロイ出来ました。
+   
+   .. note::
+   	アプリケーションの展開には約15～20分かかります。
 
-.. figure:: images/5.10/marketplace_p1_5.png
+   .. figure:: images/calm3/marketplace_p1_8.png
 
-#. Fill out the following fields and click **Clone**:
-
-- **Blueprint Name** - MongoDB*<INITIALS>*
-- **Project** - Calm
-
-Editing Cloned Blueprint
-........................
-
-#. Select |bp-icon| **Blueprints** from the sidebar and click your **MongoDB<INITIALS>** Blueprint to open the Blueprint Editor.
-
-.. figure:: images/5.10/marketplace_p1_6.png
-
-#. Click :fa:`exclamation-circle` to review the list of errors that would prevent a successful deployment of the Blueprint.
-
-.. figure:: images/5.10/marketplace_p1_7.png
-
-#. Click **Credentials** and select **CENTOS (Default)**.
-
-#. Fill out the following fields and click **Back**:
-
-- **Username** - root
-- **Secret** - Password
-- **Password** - nutanix/4u
-
-#. Select the **Mongo_ConfigSet** Service and make the following changes in the **Configuration Pane**:
-
-- Update the **VM Configuration > Image** to **CentOS**.
-- Update the **Network Adapters > NIC** to **Primary**.
-- Update the **Connection > Credential** to **CENTOS**.
-- Uncheck **Guest Customization**
-
-#. Repeat these steps for the **Mongo_Router** and **Mongo_ReplicaSet** Services.
-
-#. Click **Save**.
-
-#. Click **Launch**. Specify a unique **Application Name** (e.g. MongoDB*<INITIALS>*-1) and click **Create**.
-
-.. figure:: images/5.10/marketplace_p1_8.png
-
-
-Takeaways
+終わりに
 +++++++++
 
-- By using pre-seeded Blueprints from the Nutanix Marketplace, users can quickly try out new applications.
-- Marketplace Blueprints can be cloned and modified to suit a user's needs. For example, the pre-seeded LAMP Blueprint could be a starting point for a developer looking to swap PHP for a Go application server.
-- Marketplace Blueprints can use local disk images or automatically download associated disk images. Users can create their own keys and slipstream them into Blueprints (via cloud-init) to control access.
-- Developers can publish Blueprints to the Marketplace for fast and easy consumption by users.
-- Blueprints can be launched directly from the Marketplace with no additional configuration from users, delivering a public cloud-like SaaS experience for end users.
-- Administrators have control over what Blueprints are published to the Marketplace and which projects have access to published Blueprints.
+- Nutanix Marketplaceから事前に準備されたブループリントを使用することで、ユーザーは新しいアプリケーションを素早く試すことができます。
+- Marketplaceのブループリントは、ユーザーのニーズに合わせて複製したり、変更したりすることができます。例えば、事前に準備されたLAMPブループリントは、PHPをGoアプリケーションサーバと交換したい開発者の出発点になります。
+- Marketplace Blueprintsは、ローカルディスクイメージを使用したり、関連するディスクイメージを自動的にダウンロードしたりすることができます。ユーザーは、独自のキーを作成し、それをブループリントに（Cloud-Initを介して）設定してアクセスを制御することができます。
+- 開発者は、ブループリントをマーケットプレイスに公開して、ユーザーが素早く簡単に利用できるようにすることができます。
+- ブループリントは、ユーザーによる追加設定なしにマーケットプレイスから直接起動でき、エンド・ユーザーにパブリック・クラウドのようなSaaSエクスペリエンスを提供します。
+- 管理者は、マーケットプレイスに公開されるブループリントの内容や、公開されたブループリントへのアクセス権を持つプロジェクトを管理することができます。
 
 .. |proj-icon| image:: ../images/projects_icon.png
 .. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
 .. |mkt-icon| image:: ../images/marketplace_icon.png
 .. |bp-icon| image:: ../images/blueprints_icon.png
+.. |three-dots| image:: ../images/three_dots.png

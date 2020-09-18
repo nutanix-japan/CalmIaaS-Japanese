@@ -1,67 +1,30 @@
 .. _labsetup:
 
 ----------------------
-Calm Lab Setup
+Calm: 演習の準備
 ----------------------
 
-
-
-
-Configuring a Project
+Projectを作成する
 +++++++++++++++++++++
 
-In this lab you will leverage multiple pre-built Calm Blueprints to provision your applications...
+このラボでは、事前に構築された複数のCalmブループリントを活用して、アプリケーションのプロビジョニングを行います。
 
-#. In **Prism Central**, select :fa:`bars` **> Services > Calm**.\
+#. **Prism Central** で :fa:`bars` **> サービス > Calm** を選択します。
 
-#. Select **Projects** from the lefthand menu and click **+ Create Project**.
+#. 左側のメニューから **Project** を選択し、 **+プロジェクトを作成** をクリックします。
 
    .. figure:: images/2.png
 
-#. Fill out the following fields:
+#. 以下のフィールドに入力します。
 
-   - **Project Name** - *Initials*\ -Project
-   - Under **Users, Groups, and Roles**, select **+ User**
-      - **Name** - Administrators
-      - **Role** - Project Admin
-      - **Action** - Save
-   - Under **Infrastructure**, select **Select Provider > Nutanix**
-   - Click **Select Clusters & Subnets**
-   - Select *Your Assigned Cluster*
-   - Under **Subnets**, select **Primary**, **Secondary**, and click **Confirm**
-   - Mark **Primary** as the default network by clicking the :fa:`star`
+   - **プロジェクト名** - **あなたのイニシャル** -Project
+   - **ユーザー、グループ、ロール** は空白のまま進めます。
+   - **インフラストラクチャ** の配下で **プロバイダを選択 > Nutanix** を選択します。
+   - **クラスタおよびサブネットを選択** をクリックします。
+   - **あなたに割り当てられたクラスタ** を選択します。
+   - **サブネット** にて **Primary** を選択し、 **確認** をクリックします。
+   - :fa:`star` をクリックし、 **Primary** をデフォルトのネットワークに設定します。 
 
    .. figure:: images/3.png
 
-#. Click **Save & Configure Environment**.
-
-Deploying a Windows Tools VM
-++++++++++++++++++++++++++++
-
-Some exercises in this track will depend on leveraging the Windows Tools VM. Follow the below steps to provision your personal VM from a disk image.
-
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
-
-#. Click **+ Create VM**.
-
-#. Fill out the following fields to complete the user VM request:
-
-   - **Name** - *Initials*\ -WinToolsVM
-   - **Description** - Manually deployed Tools VM
-   - **vCPU(s)** - 2
-   - **Number of Cores per vCPU** - 1
-   - **Memory** - 4 GiB
-
-   - Select **+ Add New Disk**
-      - **Type** - DISK
-      - **Operation** - Clone from Image Service
-      - **Image** - WinToolsVM.qcow2
-      - Select **Add**
-
-   - Select **Add New NIC**
-      - **VLAN Name** - Secondary
-      - Select **Add**
-
-#. Click **Save** to create the VM.
-
-#. Power on your *Initials*\ **-WinToolsVM**.
+#. **環境の保存および設定** をクリックします。
