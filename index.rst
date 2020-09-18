@@ -66,7 +66,7 @@ Nutanix Calm IaaS Bootcampへようこそ!
     - AOS 5.16.x & PC 5.17.x
 
 アジェンダ
-++++++
++++++++++++
 
 - Nutanix Calm メインの演習
     - Calm: ラボセットアップ
@@ -83,13 +83,13 @@ Nutanix Calm IaaS Bootcampへようこそ!
     - 用語集
 
 イントロダクション
-+++++++++++++
++++++++++++++++++++++++
 
 - お名前
 - Nutanix経験
 
 初期セットアップ
-+++++++++++++
++++++++++++++++++++++++
 
 - ご使用される **Passwords** のメモを取ってください
 - 仮想デスクトップにログインしてください。
@@ -109,7 +109,7 @@ Nutanix Calm IaaS Bootcampへようこそ!
 Nutanixワークショップは、Nutanix Hosted POC環境を利用します。演習を完了するために必要なイメージ、ネットワーク、VMは事前に構築されています。
 
 ネットワーク
-..........
+...........
 
 Hosted POC クラスタは 以下の命名規則に従い命名されています:
 
@@ -230,7 +230,7 @@ RTP クラスタ:
 **Username:** RTP-POCxxx-User01 〜 RTP-POCxxx-User20, **Password:** *<講師から提供>*
 
 Frame VDI
-.........
+..........
 
 ログイン: https://frame.nutanix.com/x/labs
 
