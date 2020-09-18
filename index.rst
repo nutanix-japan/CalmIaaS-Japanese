@@ -15,7 +15,7 @@
   :name: _calm_linux_track
   :hidden:
 
-  calm_linux_track/calm_iaas_linux/calm_iaas_linux
+  calm_iaas_linux/calm_iaas_linux
 
 .. toctree::
   :maxdepth: 2
@@ -23,7 +23,7 @@
   :name: _calm_windows_track
   :hidden:
 
-  calm_windows_track/calm_iaas_windows/calm_iaas_windows
+  calm_iaas_windows/calm_iaas_windows
 
 .. toctree::
   :maxdepth: 2
@@ -31,7 +31,7 @@
   :name: _additional_calm_labs
   :hidden:
 
-  calm_dsl/calm_dsl
+  calm_escript/calm_escript
 
 .. toctree::
   :maxdepth: 2
@@ -78,9 +78,9 @@ Nutanix Calm IaaS Bootcampへようこそ!
 
 - 任意の演習
     - Calm: 有効化
-    
+
 - Appendix
-    - 用語集 
+    - 用語集
 
 イントロダクション
 +++++++++++++
@@ -97,10 +97,10 @@ Nutanix Calm IaaS Bootcampへようこそ!
 クラスタの割り当て
 ++++++++++++++++++
 
-講師は参加者に自分の割り当てられたクラスターを伝えます。 
+講師は参加者に自分の割り当てられたクラスターを伝えます。
 
 .. note::
-  
+
   もしこれらがシングルノードクラスタ(SNC)であれば、ネットワークの部分に注意を払ってください。SNCは "通常の "3ノード/4ノードクラスタとは全く異なるセットアップと構成になっています。
 
 環境の詳細
